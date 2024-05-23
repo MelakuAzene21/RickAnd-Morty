@@ -23,7 +23,6 @@
         <li><i class="fa fa-github" aria-hidden="true"></i><a href="#">Github</a></li>
          <li><a href="#">Figma</a></li>
     </ul>
-    <a href=""></a>
     </footer>
   </div>
  </template>
