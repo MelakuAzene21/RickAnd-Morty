@@ -19,10 +19,13 @@
    
   <footer class=" bg-gray-900 text-white  w-full ">
      
-   <ul class=" flex  mb-0 p-16 gap-8 justify-center">
-        <li><i class="fa fa-github" aria-hidden="true"></i><a href="#">Github</a></li>
-         <li><a href="#">Figma</a></li>
+   <ul class=" flex  mb-2 p-8 gap-2 justify-center">
+         <span > <img src="./assets/Images/githubImage.png" alt="githubIcon" class="w-6 h-6 rounded-full"></span>
+        <span class="mr-6 hover:bg-sky-600 hover:rounded-lg "><a href="https://github.com/MelakuAzene21/RickAnd-Morty" target="_blank"> Github</a></span>
+        <span><img src="./assets/Images/figmaimageicon.png" alt="figmaIcon" class="w-6 h-6 ml-4 rounded-full" ></span>
+         <span class="hover:bg-sky-500 hover:rounded-lg"><a href="https://www.figma.com/design/AoWk7SqvEsEwNrFbZLGNLj/MINAB_PROJECT_FIGMA?node-id=0-1&t=CJqd8oeR52XhOEMP-0" target="_blank">  Figma</a></span>
     </ul>
+    <p class="text-center text-lg">&copy;2024&nbsp; Developed By <span class="italic text-sky-500">Melaku Azene</span></p>
     </footer>
   </div>
  </template>
