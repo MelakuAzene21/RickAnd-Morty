@@ -1,12 +1,13 @@
 <template>
-  <div class="carousel-container mx-auto my-8 w-11/12 lg:w-3/4 relative">
+  <div class="carousel-container mx-auto  w-11/12 lg:w-3/4 relative">
     <Carousel 
       id="gallery" 
       :items-to-show="1" 
       :wrap-around="false" 
       v-model="currentSlide" 
+      
       :autoplay="true"
-      :autoplayTimeout="10000"
+      :autoplay-timeout="3000"
       class="z-12"
     >
       <template #default="{ prev, next }">

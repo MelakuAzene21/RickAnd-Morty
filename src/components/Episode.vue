@@ -1,4 +1,4 @@
-<template>
+ <template>
 <div class="mt-10">
     <p v-if="error" class="text-red-500">Something went wrong: {{ error.message }}</p>
     <p v-else-if="loading && allEpisodes.length === 0" class="text-red-600">Loading...</p>
@@ -85,4 +85,6 @@ const loadMore = () => {
 onMounted(() => {
   fetchEpisodes(nextPage.value)
 })
+
 </script>
+
