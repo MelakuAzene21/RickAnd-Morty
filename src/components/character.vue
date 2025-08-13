@@ -1,18 +1,54 @@
 <template>
-  <div class="mt-20">
+  <div class="space-y-8">
+    <!-- Header Section -->
+    <div class="text-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent mb-4">
+        Characters
+      </h1>
+      <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+        Meet the diverse cast of beings from across the multiverse
+      </p>
+    </div>
+
     <p v-if="error" class="text-red-500">Something went wrong...</p>
-    <p v-else-if="loading && allCharacters.length === 0" class="text-green-600">Loading...</p>
+    <div v-else-if="loading && allCharacters.length === 0" class="flex justify-center items-center py-20">
+      <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500"></div>
+      <span class="ml-3 text-purple-400 text-lg">Loading characters...</span>
+    </div>
     <div v-else>
-      <h1 class="mt-8 mb-3 text-center font-serif italic font-extralight text-green-400  underline ">CHARACTERS</h1>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
         <div v-for="character in displayedCharacters" :key="character.id">
-          <router-link :to="{ name: 'CharacterDetails', params: { id: character.id }}" class="cursor-pointer hover:underline">
-            <img :src="character.image" :alt="character.name" class="w-36 h-36 rounded-full mx-auto" />
-            <p class="mt-2 text-lg font-semibold text-center">{{ character.name }}</p>
+          <router-link 
+            :to="{ name: 'CharacterDetails', params: { id: character.id }}" 
+            class="group block"
+          >
+            <div class="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-4 border border-gray-700 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20 text-center">
+              <div class="relative mb-4">
+                <img 
+                  :src="character.image" 
+                  :alt="character.name" 
+                  class="w-20 h-20 md:w-24 md:h-24 rounded-full mx-auto object-cover border-2 border-gray-600 group-hover:border-purple-400 transition-colors duration-300" 
+                />
+                <div class="absolute inset-0 rounded-full bg-purple-500/0 group-hover:bg-purple-500/10 transition-colors duration-300"></div>
+              </div>
+              <h3 class="text-sm md:text-base font-semibold text-white group-hover:text-purple-400 transition-colors duration-300 line-clamp-2">
+                {{ character.name }}
+              </h3>
+            </div>
           </router-link>
         </div>
       </div>
-      <div class="text-center"><button v-if="nextPage" @click="loadMore" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg mx-auto  hover:bg-sky-800 ">Load More</button></div>
+      
+      <div class="text-center mt-12">
+        <button 
+          v-if="nextPage" 
+          @click="loadMore" 
+          class="inline-flex items-center px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-semibold rounded-full hover:from-purple-600 hover:to-pink-700 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25"
+        >
+          <i class="fas fa-plus mr-2"></i>
+          Load More Characters
+        </button>
+      </div>
     </div>
   </div>
 </template>
