@@ -7,9 +7,9 @@
         :items-to-show="1" 
         :wrap-around="true" 
         v-model="currentSlide" 
-        :autoplay="true"
-        :autoplay-timeout="4000"
-        :transition="600"
+        :autoplay="autoplayEnabled"
+        :autoplay-timeout="6000"
+        :transition="1200"
         class="relative"
       >
         <Slide v-for="(slide, index) in slides" :key="index">
@@ -24,8 +24,17 @@
             
             <!-- Character Info Overlay -->
             <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+              <div class="flex items-center mb-2">
+                <span class="bg-green-500 text-black px-2 py-1 rounded text-xs font-bold mr-2">OFFICIAL</span>
+                <span class="bg-red-500 px-2 py-1 rounded text-xs font-bold">ADULT SWIM</span>
+              </div>
               <h3 class="text-2xl md:text-3xl font-bold mb-2 text-shadow">{{ slide.name }}</h3>
-              <p class="text-gray-300 text-sm md:text-base">{{ slide.species }} • {{ slide.status }}</p>
+              <p class="text-gray-300 text-sm md:text-base mb-2">{{ slide.species }} • {{ slide.status }}</p>
+              <div class="flex items-center space-x-4 text-xs text-gray-400">
+                <span><i class="fas fa-tv mr-1"></i>{{ slide.episodes }} Episodes</span>
+                <span><i class="fas fa-star mr-1 text-yellow-400"></i>{{ slide.rating }}/10</span>
+                <span><i class="fas fa-calendar mr-1"></i>{{ slide.firstAppearance }}</span>
+              </div>
             </div>
             
             <!-- Slide Number Indicator -->
@@ -37,6 +46,14 @@
         
         <!-- Navigation Buttons -->
         <template #addons>
+          <!-- Play/Pause Button -->
+          <button 
+            @click="toggleAutoplay" 
+            class="absolute top-4 left-4 bg-black/50 hover:bg-black/70 backdrop-blur-sm text-white p-3 rounded-full transition-all duration-300 hover:scale-110 z-10 group"
+          >
+            <i :class="autoplayEnabled ? 'fas fa-pause' : 'fas fa-play'" class="text-lg group-hover:text-green-400"></i>
+          </button>
+          
           <button 
             @click="prev" 
             class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 backdrop-blur-sm text-white p-3 rounded-full transition-all duration-300 hover:scale-110 z-10 group"
@@ -116,54 +133,79 @@ export default defineComponent({
   data() {
     return {
       currentSlide: 0,
+      autoplayEnabled: true,
       slides: [
         {
           image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
           name: 'Rick Sanchez',
           species: 'Human',
-          status: 'Alive'
+          status: 'Alive',
+          episodes: 51,
+          rating: 9.2,
+          firstAppearance: '2013'
         },
         {
           image: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg',
           name: 'Morty Smith',
           species: 'Human',
-          status: 'Alive'
+          status: 'Alive',
+          episodes: 51,
+          rating: 8.9,
+          firstAppearance: '2013'
         },
         {
           image: 'https://rickandmortyapi.com/api/character/avatar/3.jpeg',
           name: 'Summer Smith',
           species: 'Human',
-          status: 'Alive'
+          status: 'Alive',
+          episodes: 42,
+          rating: 8.5,
+          firstAppearance: '2013'
         },
         {
           image: 'https://rickandmortyapi.com/api/character/avatar/4.jpeg',
           name: 'Beth Smith',
           species: 'Human',
-          status: 'Alive'
+          status: 'Alive',
+          episodes: 45,
+          rating: 8.7,
+          firstAppearance: '2013'
         },
         {
           image: 'https://rickandmortyapi.com/api/character/avatar/5.jpeg',
           name: 'Jerry Smith',
           species: 'Human',
-          status: 'Alive'
+          status: 'Alive',
+          episodes: 43,
+          rating: 7.8,
+          firstAppearance: '2013'
         },
         {
           image: 'https://rickandmortyapi.com/api/character/avatar/38.jpeg',
           name: 'Birdperson',
           species: 'Bird-Person',
-          status: 'Alive'
+          status: 'Alive',
+          episodes: 8,
+          rating: 9.1,
+          firstAppearance: '2014'
         },
         {
           image: 'https://rickandmortyapi.com/api/character/avatar/71.jpeg',
           name: 'Squanch',
           species: 'Squanch',
-          status: 'Alive'
+          status: 'Alive',
+          episodes: 6,
+          rating: 8.3,
+          firstAppearance: '2014'
         },
         {
           image: 'https://rickandmortyapi.com/api/character/avatar/158.jpeg',
           name: 'Mr. Meeseeks',
           species: 'Meeseeks',
-          status: 'unknown'
+          status: 'unknown',
+          episodes: 3,
+          rating: 9.5,
+          firstAppearance: '2014'
         }
       ]
     }
@@ -177,6 +219,9 @@ export default defineComponent({
     },
     prev() {
       this.currentSlide = this.currentSlide === 0 ? this.slides.length - 1 : this.currentSlide - 1
+    },
+    toggleAutoplay() {
+      this.autoplayEnabled = !this.autoplayEnabled
     }
   },
 })
