@@ -1,17 +1,33 @@
 <template>
   <div class="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black">
     <!-- Header -->
-    <header class="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-green-500/20">
+    <header class="fixed top-0 w-full z-50 bg-black/95 backdrop-blur-md border-b border-green-500/30 shadow-lg shadow-green-500/10">
       <div class="container mx-auto px-4 py-4">
-        <h1 class="text-center text-2xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">
-          RICK AND MORTY
-        </h1>
-        <p class="text-center text-gray-400 text-sm mt-1 hidden sm:block">Interdimensional Adventures Await</p>
+        <div class="flex items-center justify-center space-x-4">
+          <div class="hidden md:flex items-center space-x-2">
+            <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+              <i class="fas fa-atom text-black text-sm"></i>
+            </div>
+            <span class="bg-red-600 text-white px-2 py-1 rounded text-xs font-bold">ADULT SWIM</span>
+          </div>
+          <div class="text-center">
+            <h1 class="text-2xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">
+              RICK AND MORTY
+            </h1>
+            <p class="text-gray-400 text-xs mt-1 hidden sm:block">Official Adult Swim Series • Interdimensional Adventures</p>
+          </div>
+          <div class="hidden md:flex items-center space-x-2">
+            <span class="bg-yellow-500 text-black px-2 py-1 rounded text-xs font-bold">EMMY NOMINATED</span>
+            <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+              <i class="fas fa-tv text-white text-sm"></i>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
 
     <!-- Navigation -->
-    <nav class="fixed top-16 md:top-20 w-full z-40 bg-gray-900/95 backdrop-blur-sm border-b border-gray-700">
+    <nav class="fixed top-20 md:top-24 w-full z-40 bg-gray-900/95 backdrop-blur-sm border-b border-gray-700">
       <div class="container mx-auto px-4 py-3">
         <div class="flex flex-wrap justify-center gap-2 md:gap-6">
           <router-link 
@@ -43,7 +59,7 @@
     </nav>
 
     <!-- Main Content -->
-    <main class="pt-32 md:pt-36 min-h-screen">
+    <main class="pt-36 md:pt-40 min-h-screen">
       <div class="container mx-auto px-4">
         <router-view />
       </div>
