@@ -1,1 +1,9 @@
-{"code":"rate-limited","message":"You have hit the rate limit. Please upgrade to keep chatting.","providerLimitHit":false,"isRetryable":true}
+<template>
+  <div>
+    <!-- Gallery content will go here -->
+  </div>
+</template>
+
+<script setup>
+// Component logic will go here
+</script>
