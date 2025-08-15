@@ -50,6 +50,7 @@
 
     <!-- Featured Carousel -->
     <section class="mb-16">
+      <RandomGenerator class="mb-8"/>
       <Gallery class="mb-8"/>
     </section>
 
@@ -313,6 +314,7 @@
 
 <script setup>
 import Gallery from './Gallery.vue';
+import RandomGenerator from './RandomGenerator.vue';
 </script>
 
 <style scoped>

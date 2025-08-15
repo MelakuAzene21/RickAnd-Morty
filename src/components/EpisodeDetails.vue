@@ -24,6 +24,9 @@
             {{ result.episode.episode }}
           </span>
           <h1 class="text-3xl md:text-4xl font-bold text-white mb-4">{{ result.episode.name }}</h1>
+          <div class="mb-6">
+            <FavoriteButton type="episodes" :item="result.episode" />
+          </div>
         </div>
         
         <div class="grid md:grid-cols-3 gap-6 text-center">
@@ -76,6 +79,7 @@
 import { defineProps } from 'vue';
 import gql from 'graphql-tag'
 import { useQuery } from '@vue/apollo-composable'
+import FavoriteButton from './FavoriteButton.vue'
 
 const props = defineProps(['id']);
 

@@ -8,6 +8,7 @@ import Location from '../components/Location.vue';
 import EpisodeDetails from '../components/EpisodeDetails.vue';
 import LocationDetails from '../components/LocationDetails.vue';
 import CharacterDetails from '../components/CharacterDetails.vue'
+import Favorites from '../components/Favorites.vue'
 const routes = [
   {
     path: '/',
@@ -50,6 +51,11 @@ name:'LocationDetails',
 component:LocationDetails,
 props:true
 },
+  {
+    path: '/favorites',
+    name: 'Favorites',
+    component: Favorites,
+  },
 ];
 
 const router = createRouter({

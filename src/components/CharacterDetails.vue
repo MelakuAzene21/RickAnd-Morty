@@ -29,6 +29,9 @@
           </div>
           <div class="flex-1 text-center md:text-left">
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-4">{{ result.character.name }}</h1>
+            <div class="mb-6">
+              <FavoriteButton type="characters" :item="result.character" />
+            </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
               <div class="bg-gray-800/50 rounded-xl p-3 border border-gray-600">
                 <div class="text-xs text-gray-400 mb-1">Species</div>
@@ -98,6 +101,7 @@
 import { defineProps } from 'vue';
 import gql from 'graphql-tag'
 import { useQuery } from '@vue/apollo-composable'
+import FavoriteButton from './FavoriteButton.vue'
 
 const props = defineProps(['id']);
 

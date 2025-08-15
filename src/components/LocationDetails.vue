@@ -24,6 +24,9 @@
             <i class="fas fa-map-marker-alt text-white text-2xl"></i>
           </div>
           <h1 class="text-3xl md:text-4xl font-bold text-white mb-4">{{ result.location.name }}</h1>
+          <div class="mb-6">
+            <FavoriteButton type="locations" :item="result.location" />
+          </div>
         </div>
         
         <div class="grid md:grid-cols-4 gap-6 text-center">
@@ -81,6 +84,7 @@
 import { defineProps } from 'vue';
 import gql from 'graphql-tag'
 import { useQuery } from '@vue/apollo-composable'
+import FavoriteButton from './FavoriteButton.vue'
 
 const props = defineProps(['id']);
 
