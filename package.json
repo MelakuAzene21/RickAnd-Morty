@@ -15,7 +15,7 @@
     "graphql": "^16.8.1",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0",
-    "vue3-carousel": "^0.3.3"
+    "vue3-carousel": "^0.16.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.4",
