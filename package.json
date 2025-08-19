@@ -11,6 +11,7 @@
   "dependencies": {
     "@apollo/client": "^3.10.4",
     "@vue/apollo-composable": "^4.0.2",
+    "braces": "^3.0.3",
     "graphql": "^16.8.1",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0",
