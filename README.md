@@ -214,6 +214,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Developer**: Melaku Azene  
 **GitHub**: [@MelakuAzene21](https://github.com/MelakuAzene21)  
+**Telegram**:[@melaku_tech]
 **Project Link**: [Rick and Morty Multiverse Explorer](https://github.com/MelakuAzene21/RickAnd-Morty)
 
 ---
