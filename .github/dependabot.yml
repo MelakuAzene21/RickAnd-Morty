@@ -1,0 +1,15 @@
+version: 2
+updates:
+  # Manage npm/Yarn dependencies
+  - package-ecosystem: "npm"    # We're using npm here (works for Vue projects too)
+    directory: "/"              # Root folder with package.json
+    schedule:
+      interval: "daily"         # Check every day (you can use weekly/monthly if preferred)
+    open-pull-requests-limit: 10
+    commit-message:
+      prefix: "deps"
+    rebase-strategy: "auto"
+
+    # Security updates are always allowed
+    allow:
+      - dependency-type: "all"  # both prod (dependencies) and dev (devDependencies)
